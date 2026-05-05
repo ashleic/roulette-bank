@@ -1,0 +1,401 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(201, 162, 39, 0.22), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(120, 12, 24, 0.28), transparent 34%),
+    linear-gradient(135deg, #050505, #111111 45%, #070707);
+  color: #ffffff;
+}
+
+.auth-page,
+.dashboard-container {
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card {
+  width: 430px;
+  max-width: 100%;
+  background:
+    linear-gradient(145deg, rgba(20, 20, 20, 0.96), rgba(8, 8, 8, 0.98));
+  border: 1px solid #d4af37;
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow:
+    0 0 35px rgba(212, 175, 55, 0.25),
+    inset 0 0 18px rgba(255, 255, 255, 0.03);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.casino-chip {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle, #d4af37 0 34%, #7f1d1d 35% 58%, #111 59% 100%);
+  color: white;
+  font-weight: 900;
+  border: 4px dashed #f8e7a1;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
+}
+
+.auth-card h1 {
+  color: #f5c542;
+  margin: 0 0 6px;
+  font-size: 36px;
+  letter-spacing: 0.5px;
+}
+
+.auth-card h2 {
+  color: #ffffff;
+  margin: 22px 0 24px;
+  font-size: 25px;
+}
+
+.auth-tagline {
+  color: #d9d9d9;
+  margin: 0;
+  font-size: 14px;
+}
+
+.roulette-strip {
+  margin: 22px auto 8px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  color: #d4af37;
+  font-size: 16px;
+}
+
+.roulette-strip span:nth-child(even) {
+  color: #e11d48;
+}
+
+.casino-bg {
+  position: absolute;
+  font-size: 230px;
+  font-weight: 900;
+  opacity: 0.055;
+  user-select: none;
+}
+
+.casino-bg-left {
+  left: 7%;
+  top: 18%;
+  color: #d4af37;
+}
+
+.casino-bg-right {
+  right: 8%;
+  bottom: 14%;
+  color: #e11d48;
+}
+
+form {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-sizing: border-box;
+  background: #f1f5f9;
+  color: #111827;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+}
+
+input::placeholder {
+  color: #6b7280;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d4af37, #f5c542);
+  color: #111111;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #f5c542, #ffe08a);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(212, 175, 55, 0.22);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-card p {
+  color: #ffffff;
+}
+
+.auth-card a {
+  color: #f5c542;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+}
+
+.error-message,
+.error-box {
+  background: rgba(127, 29, 29, 0.82);
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.success-message,
+.success-box {
+  background: rgba(5, 46, 22, 0.72);
+  color: #d1fae5;
+  border: 1px solid rgba(34, 197, 94, 0.65);
+  padding: 18px;
+  border-radius: 16px;
+  margin-top: 22px;
+  word-break: break-word;
+}
+
+.success-box a {
+  color: #f5c542;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.success-box a:hover {
+  text-decoration: underline;
+}
+
+.loading-text {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.dashboard-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 30px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.dashboard-topbar h1 {
+  color: #f5c542;
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.1;
+  text-shadow: 0 0 18px rgba(245, 197, 66, 0.18);
+}
+
+.dashboard-subtitle {
+  color: #d1d5db;
+  margin: 10px 0 0;
+  font-size: 16px;
+}
+
+.eyebrow {
+  color: #22c55e;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 12px;
+  font-weight: 900;
+  margin: 0 0 8px;
+}
+
+.logout-btn {
+  width: auto;
+  min-width: 120px;
+  background: linear-gradient(135deg, #7f1d1d, #dc2626);
+  color: #ffffff;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  background:
+    linear-gradient(145deg, rgba(17, 17, 17, 0.96), rgba(8, 8, 8, 0.98));
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(212, 175, 55, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.card h2 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 28px;
+}
+
+.wallet-card h2 {
+  color: #38bdf8;
+}
+
+.send-card h2 {
+  color: #fb7185;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #fecaca;
+  background: rgba(127, 29, 29, 0.45);
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.status-pill.active {
+  color: #bbf7d0;
+  background: rgba(5, 46, 22, 0.75);
+  border-color: rgba(34, 197, 94, 0.6);
+}
+
+.casino-icon {
+  font-size: 34px;
+  filter: drop-shadow(0 0 12px rgba(245, 197, 66, 0.35));
+}
+
+.label-text {
+  color: #f5c542;
+  margin: 18px 0 8px;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wallet-address {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e5e7eb;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  word-break: break-word;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}
+
+.balance-display {
+  color: #22c55e;
+  font-size: 34px;
+  font-weight: 900;
+  margin: 8px 0 22px;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #f5c542;
+  border: 1px solid rgba(245, 197, 66, 0.65);
+}
+
+.secondary-btn:hover {
+  background: rgba(245, 197, 66, 0.1);
+  color: #ffe08a;
+}
+
+@media (max-width: 800px) {
+  .auth-page,
+  .dashboard-container {
+    padding: 24px;
+  }
+
+  .dashboard-topbar {
+    flex-direction: column;
+  }
+
+  .dashboard-topbar h1 {
+    font-size: 34px;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .button-row {
+    grid-template-columns: 1fr;
+  }
+
+  .casino-bg {
+    display: none;
+  }
+}

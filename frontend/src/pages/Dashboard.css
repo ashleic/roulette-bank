@@ -1,0 +1,122 @@
+.dashboard-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #2b2110, #050505 60%);
+  color: white;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-card {
+  max-width: 1100px;
+  margin: auto;
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.12);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.eyebrow {
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.connect-btn,
+.send-btn {
+  background: #d4af37;
+  color: #111;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.stat-box,
+.action-section,
+.success-box,
+.error-box {
+  background: #111;
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid #333;
+}
+
+.stat-box p {
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.stat-box h3 {
+  word-break: break-all;
+}
+
+.action-section {
+  margin-top: 24px;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  color: #d4af37;
+  font-weight: bold;
+}
+
+input {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background: #050505;
+  color: white;
+}
+
+.success-box {
+  margin-top: 20px;
+  border-color: #2ecc71;
+}
+
+.success-box a {
+  color: #d4af37;
+}
+
+.error-box {
+  margin-top: 20px;
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+@media (max-width: 800px) {
+  .header,
+  .stats-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+}
